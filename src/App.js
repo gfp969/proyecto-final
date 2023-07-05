@@ -5,7 +5,7 @@ import { Logout } from "./auth/Logout";
 
 function App() {
 
-  const { isAuthenticated } = useAuth0;
+  const { isAuthenticated } = useAuth0();
 
   return (
     <div className="App">
