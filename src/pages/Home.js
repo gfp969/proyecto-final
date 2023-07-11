@@ -6,23 +6,24 @@ import axios from 'axios';
 const Home = () => {
 
     const { user, isAuthenticated, isLoading } = useAuth0();
-    const key='Rrp94ohFbCshXcDxxlUMeA==wVHoQaCCTGBuVVCE';
-    const headers={
+    const key = process.env.REACT_APP_KEY;
+    const headers = {
         'X-Api-Key': key
     }
-    const nombre='Michael Jordan';
-    const url='https://api.api-ninjas.com/v1/celebrity?name='+nombre;
 
-    useEffect(()=>{
-        axios.get(url, {headers})
-        .then(res=>{console.log(res.data)})
-        .catch(error=>{console.log(error)})
-    },[])
+    const nombre = 'Michael Jordan';
+    const url = process.env.REACT_APP_URL_APP + nombre;
 
-    if(isLoading){
+    useEffect(() => {
+        axios.get(url, { headers })
+            .then(res => { console.log(res.data) })
+            .catch(error => { console.log(error) })
+    }, [])
+
+    if (isLoading) {
         return <div>Cargando...</div>
     }
-    
+
     return (
         isAuthenticated && (
             <div>
@@ -34,4 +35,4 @@ const Home = () => {
     )
 }
 
-export default Home
+export default Home;
