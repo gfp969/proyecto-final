@@ -10,11 +10,11 @@ const Home = () => {
     const headers={
         'X-Api-Key': key
     }
-
-    const url='https://api.api-ninjas.com/v1/celebrity?name='+'Michael Jordan';
+    const nombre='Michael Jordan';
+    const url='https://api.api-ninjas.com/v1/celebrity?name='+nombre;
 
     useEffect(()=>{
-        axios.get(url)
+        axios.get(url, {headers})
         .then(res=>{console.log(res.data)})
         .catch(error=>{console.log(error)})
     },[])
