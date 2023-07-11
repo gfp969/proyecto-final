@@ -1,37 +1,48 @@
 import { useAuth0 } from '@auth0/auth0-react';
-import React from 'react';
+import React, { Fragment } from 'react';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const Home = () => {
 
-    const { user, isAuthenticated, isLoading } = useAuth0();
-    const key='Rrp94ohFbCshXcDxxlUMeA==wVHoQaCCTGBuVVCE';
-    const headers={
+    const { user } = useAuth0();
+    const [celebrity, setCelebrity] = useState([]);
+    const key = process.env.REACT_APP_KEY;
+    const headers = {
         'X-Api-Key': key
     }
-    const nombre='Michael Jordan';
-    const url='https://api.api-ninjas.com/v1/celebrity?name='+nombre;
 
-    useEffect(()=>{
-        axios.get(url, {headers})
-        .then(res=>{console.log(res.data)})
-        .catch(error=>{console.log(error)})
-    },[])
+    const nombre = 'Michael Jordan';
+    const url = process.env.REACT_APP_URL_APP + nombre;
 
-    if(isLoading){
-        return <div>Cargando...</div>
-    }
-    
+    useEffect(() => {
+        axios.get(url, { headers })
+            .then(res => {
+                console.log(res.data)
+                setCelebrity(res.data)
+                console.log(celebrity)
+            })
+            .catch(error => { console.log(error) })
+    }, [])
+
     return (
-        isAuthenticated && (
+        <div>
             <div>
-                <img src={user.picture} alt={user.name} />
                 <h2> {user.name} </h2>
-                <p>Correo electronico: {user.email} </p>
             </div>
-        )
+            <div>
+                {celebrity.map(cel => {
+                    return (
+                        <Fragment>
+                            <h4>{cel.name}</h4>
+                            <h4>{cel.age}</h4>
+                        </Fragment>
+                    )
+                })}
+            </div>
+        </div>
     )
+
 }
 
-export default Home
+export default Home;
