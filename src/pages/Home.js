@@ -36,6 +36,11 @@ const Home = () => {
                         <Fragment>
                             <h4>{cel.name}</h4>
                             <h4>{cel.age}</h4>
+                            {cel.occupation.map(prof => {
+                                return (
+                                    <p>{prof}</p>
+                                )
+                            })}
                         </Fragment>
                     )
                 })}
