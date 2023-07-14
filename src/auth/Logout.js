@@ -8,5 +8,5 @@ export const Logout = () => {
         <button onClick={() => logout({ returnTo: window.location.origin })}>
             Cerrar sesión
         </button>
-    )
+    );
 };
