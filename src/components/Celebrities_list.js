@@ -1,10 +1,21 @@
 import React from 'react';
 import { Fragment } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { removeCel, setCel } from '../reducers/slices/celebritySlice';
 
 const Celebrities_list = ({ celebrities }) => {
     const dispatch = useDispatch();
     const { celebrities_list } = useSelector(state => state.cel);
+
+    function handleAdd(celid) {
+        const celebrity = celebrities.find(c => c.birthday === celid);
+        if (celebrities_list.find(c => c.birthday === celid)) {
+            dispatch(removeCel(celid));
+        } else {
+            dispatch(setCel(celebrity));
+        }
+        console.log(celebrity);
+    }
 
     return (
         <Fragment>
@@ -18,6 +29,7 @@ const Celebrities_list = ({ celebrities }) => {
                             <h4>{cel.name}</h4>
                             <h4>{cel.age}</h4>
                             <div>{cel.occupation}</div>
+                            <button onClick={() => handleAdd(cel.birthday)} >Agregar a favoritos</button>
                         </Fragment>
                     )
                 })}
