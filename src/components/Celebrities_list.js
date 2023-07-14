@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 const Celebrities_list = ({ celebrities }) => {
     const dispatch = useDispatch();
-    const { Celebrities_list } = useSelector(state => state.Celebrities_list);
+    const { celebrities_list } = useSelector(state => state.cel);
 
     return (
         <Fragment>
