@@ -21,21 +21,19 @@ const SearchBar = () => {
             .then(res => {
                 setCelData(res.data);
             })
-            .catch(err => {console.log(err)});
+            .catch(err => { console.log(err) });
     }
 
     return (
-        <Fragment>
-            <div>
-                <nav>
-                    <div className="search">
-                        <input type='text' placeholder='search...' onChange={handleChange}></input>
-                        <button className='search-btn' onClick={getCelData}>Search</button>
-                    </div>
-                </nav>
-                {celData ? (<Celebrities_list celebrities={celData} />): (<Home />)}
+
+        <div>
+            <div class="input-group">
+                <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" onChange={handleChange}></input>
+                <button type="button" class="btn btn-outline-primary" onClick={getCelData}>Search</button>
             </div>
-        </Fragment>
+            {celData ? (<Celebrities_list celebrities={celData} />) : (<Home />)}
+        </div>
+
     )
 }
 

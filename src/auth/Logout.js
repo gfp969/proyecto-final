@@ -5,8 +5,8 @@ export const Logout = () => {
     const { logout } = useAuth0();
 
     return (
-        <button onClick={() => logout({ returnTo: window.location.origin })}>
-            Cerrar sesión
-        </button>
+        <div className="d-flex justify-content-center">
+            <button class="btn btn-danger" onClick={() => logout({ returnTo: window.location.origin })}>Cerrar sesión</button>
+        </div>
     );
 };

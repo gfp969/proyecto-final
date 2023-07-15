@@ -19,18 +19,26 @@ const Celebrities_list = ({ celebrities }) => {
 
     return (
         <Fragment>
-            <div>
-                <h2> Celebrities list </h2>
+            <div className="d-flex justify-content-center">
+                <h2> Lista de celebridades </h2>
             </div>
             <div>
                 {celebrities.map(cel => {
                     return (
-                        <Fragment>
-                            <h4>{cel.name}</h4>
-                            <h4>{cel.age}</h4>
-                            <div>{cel.occupation}</div>
-                            <button onClick={() => handleAdd(cel.birthday)} >Agregar a favoritos</button>
-                        </Fragment>
+                        <div class="row mx-5">
+                            <div class="col ml-5">
+                                <div className="card">
+                                    <div className="card-body">
+                                        <h4 className="text-center">{cel.name}</h4>
+                                        <h4 className="text-center">{cel.gender}</h4>
+                                        <div className="text-center">{cel.nationality}</div>
+                                        <div className="d-flex justify-content-center">
+                                            <button className="btn btn-success" onClick={() => handleAdd(cel.birthday)} >Agregar a favoritos</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     )
                 })}
             </div>

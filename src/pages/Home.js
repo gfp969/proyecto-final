@@ -27,8 +27,12 @@ const Home = () => {
 
     return (
         <div>
-            <h3>{user.name}</h3>
-            <Celebrities_list celebrities={celebrity} />
+            <div className="d-flex justify-content-center">
+                <button className="btn btn-info btn-sm">Usuario: {user.name}</button>
+            </div>
+            <div>
+                <Celebrities_list celebrities={celebrity} />
+            </div>
         </div>
     )
 
