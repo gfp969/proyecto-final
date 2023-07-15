@@ -25,12 +25,16 @@ const Celebrities_list = ({ celebrities }) => {
             <div>
                 {celebrities.map(cel => {
                     return (
-                        <Fragment>
-                            <h4>{cel.name}</h4>
-                            <h4>{cel.age}</h4>
-                            <div>{cel.occupation}</div>
-                            <button onClick={() => handleAdd(cel.birthday)} >Agregar a favoritos</button>
-                        </Fragment>
+                        <div className="card" style={{ width: 200 }}>
+                            <div className='center'>
+                                <div className="card-body">
+                                    <h4 className="card-title">{cel.name}</h4>
+                                    <h4 className="card-subtitle mb-2 text-muted">{cel.gender}</h4>
+                                    <div className="card-text">{cel.nationality}</div>
+                                    <button className="btn btn-success" onClick={() => handleAdd(cel.birthday)} >Agregar a favoritos</button>
+                                </div>
+                            </div>
+                        </div>
                     )
                 })}
             </div>
