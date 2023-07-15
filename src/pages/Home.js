@@ -27,8 +27,8 @@ const Home = () => {
 
     return (
         <div>
-            <div class="d-flex justify-content-end">
-                <h5>Usuario: {user.name}</h5>
+            <div className="d-flex justify-content-center">
+                <button className="btn btn-success btn-sm">Usuario: {user.name}</button>
             </div>
             <div>
                 <Celebrities_list celebrities={celebrity} />
