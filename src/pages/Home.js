@@ -13,8 +13,7 @@ const Home = () => {
         'X-Api-Key': key
     }
 
-    const nombre = 'Michael Jordan';
-    const url = process.env.REACT_APP_URL_APP +'max_net_worth=30';
+    const url = process.env.REACT_APP_URL_APP;
 
     useEffect(() => {
         axios.get(url, { headers })
