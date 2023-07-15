@@ -5,7 +5,7 @@ const celSlice = createSlice({
     initialState: { celebrities_list: [] },
     reducers: {
         setCel: (state, action) => {
-            state.celebrities_list = [... state.celebrities_list, action.payload];
+            state.celebrities_list = [...state.celebrities_list, action.payload];
         },
         removeCel: (state, action) => {
             const celId = action.payload;
