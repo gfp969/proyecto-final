@@ -25,13 +25,17 @@ const Celebrities_list = ({ celebrities }) => {
             <div>
                 {celebrities.map(cel => {
                     return (
-                        <div className="card" style={{ width: 200 }}>
-                            <div className='center'>
-                                <div className="card-body">
-                                    <h4 className="card-title">{cel.name}</h4>
-                                    <h4 className="card-subtitle mb-2 text-muted">{cel.gender}</h4>
-                                    <div className="card-text">{cel.nationality}</div>
-                                    <button className="btn btn-success" onClick={() => handleAdd(cel.birthday)} >Agregar a favoritos</button>
+                        <div class="row mx-5">
+                            <div class="col ml-5">
+                                <div className="card">
+                                    <div className="card-body">
+                                        <h4 className="text-center">{cel.name}</h4>
+                                        <h4 className="text-center">{cel.gender}</h4>
+                                        <div className="text-center">{cel.nationality}</div>
+                                        <div className="d-flex justify-content-center">
+                                            <button className="btn btn-success" onClick={() => handleAdd(cel.birthday)} >Agregar a favoritos</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

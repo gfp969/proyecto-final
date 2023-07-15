@@ -8,11 +8,13 @@ const Favorites = () => {
 
     return (
         <Fragment>
-            <div>Listado de Favoritos</div>
-            <table>
-                <thead>
+            <div className="d-flex justify-content-center">
+                <h2>Listado de Favoritos</h2>
+            </div>
+            <table className="table table-striped">
+                <thead className="thead-dark">
                     <tr>
-                        <th scope='col'>ID</th>
+                        <th scope='col'>Año de nacimiento</th>
                         <th scope='col'>Nombre</th>
                         <th scope='col'>Nacionalidad</th>
                         <th scope='col'>Edad</th>
