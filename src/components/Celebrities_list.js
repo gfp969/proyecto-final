@@ -19,8 +19,8 @@ const Celebrities_list = ({ celebrities }) => {
 
     return (
         <Fragment>
-            <div>
-                <h2> Celebrities list </h2>
+            <div className="d-flex justify-content-center">
+                <h2> Lista de celebridades </h2>
             </div>
             <div>
                 {celebrities.map(cel => {

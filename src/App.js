@@ -14,10 +14,12 @@ function App() {
       <header className="App-header">
         {isAuthenticated ? (
           <>
-            <nav>
-              <Link to='/favorites'>Favoritos</Link>
-              <Link to='/home'>Home</Link>
-              <Link to='/logout'>Logout</Link>
+            <nav className="navbar bg-dark border-bottom border-bottom-dark" data-bs-theme="dark">
+              <div className="container">
+                <Link class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" to='/favorites'>Favoritos</Link>
+                <Link class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" to='/home'>Home</Link>
+                <Link class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" to='/logout'>Logout</Link>
+              </div>
             </nav>
           </>
         ) : (

@@ -27,8 +27,12 @@ const Home = () => {
 
     return (
         <div>
-            <h3>{user.name}</h3>
-            <Celebrities_list celebrities={celebrity} />
+            <div class="d-flex justify-content-end">
+                <h5>Usuario: {user.name}</h5>
+            </div>
+            <div>
+                <Celebrities_list celebrities={celebrity} />
+            </div>
         </div>
     )
 
